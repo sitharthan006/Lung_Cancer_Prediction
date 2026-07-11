@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
+st.write("Step 1: App started")
 # Custom Styling (Dark/Premium Clean Theme UI Elements)
 st.markdown("""
 <style>
@@ -66,7 +66,7 @@ st.markdown("""
 st.title("🫁 Lung Cancer Prediction Dashboard")
 st.markdown("Predict the likelihood of lung cancer based on demographic, behavioral, and clinical features using trained machine learning models.")
 st.markdown("---")
-
+st.write("Step 2: About to load model")
 # Setup model paths
 model_dir = "models/ui_models"
 model_files = {
@@ -80,10 +80,12 @@ model_files = {
 # Loader functions cached
 @st.cache_resource
 def load_ui_model(model_name):
+    st.write("Loading:", model_name)
     model_path = os.path.join(model_dir, model_files[model_name])
-    with open(model_path, 'rb') as file:
-        return pickle.load(file)
-
+    with open(model_path, "rb") as f:
+        model = pickle.load(f)
+    st.write("Model loaded")
+    return model
 @st.cache_resource
 def load_encoders():
     encoder_path = os.path.join(model_dir, 'ui_label_encoders.pkl')

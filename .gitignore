@@ -22,8 +22,13 @@ env/
 data/processed_data/
 data/raw_data/*.csv
 
-# Models (Large serialized files)
-models/
+# Ignore training models
+models/full_data_models/
+models/tuned_models/
+
+# Keep UI models
+!models/ui_models/
+!models/ui_models/**
 
 # OS specific files
 .DS_Store
