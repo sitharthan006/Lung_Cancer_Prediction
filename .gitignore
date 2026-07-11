@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env/
+env/
+
+# IDE / VS Code
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Data files (Exclude raw large CSV and processed binary pickles)
+data/processed_data/
+data/raw_data/*.csv
+
+# Models (Large serialized files)
+models/
+
+# OS specific files
+.DS_Store
+Thumbs.db
